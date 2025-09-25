@@ -754,4 +754,5 @@ if __name__ == '__main__':
         print("User: username=user1, password=user123")
         print("Rescue Team: username=rescue1, password=rescue123")
     
-    socketio.run(app, debug=True, host='localhost', port=5001)
+    port = int(os.environ.get("PORT", 5000))
+    socketio.run(app, host="0.0.0.0", port=port, debug=False, allow_unsafe_werkzeug=True)
